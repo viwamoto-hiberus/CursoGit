@@ -1,1 +1,3 @@
 Nuevo fichero
+para rama cambios1
+para rama cambios2
