@@ -1,0 +1,17 @@
+diff --git a/nuevaCarpeta/teste_1.txt b/nuevaCarpeta/teste_1.txt
+index 4dafbc0..1215f13 100644
+--- a/nuevaCarpeta/teste_1.txt
++++ b/nuevaCarpeta/teste_1.txt
+@@ -1,7 +1,8 @@
+-1 - Nuevo fichero
++1 - Nuevo fichero teste
+ 2 - Nuevo fichero
+ 3 - Nuevo fichero
+ 4 - Nuevo fichero
+ 5 - Nuevo fichero
+ 6 - Nuevo fichero
+-7 - Nuevo fichero
+\ No newline at end of file
++7 - Nuevo fichero
++9 - Nueva linea teste
+\ No newline at end of file

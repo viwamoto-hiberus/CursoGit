@@ -1,0 +1,251 @@
+1) Crear un directorio nuevo para estos ejercicios
+viwamoto@HL-119633:~$ mkdir Ejercicio_Curso_GIT
+viwamoto@HL-119633:~$ cd Ejercicio_Curso_GIT/
+
+2) Inicializar el repositorio git
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git init
+ayuda: Usando 'master' como el nombre de la rama inicial. Este nombre de rama predeterminado
+ayuda: está sujeto a cambios. Para configurar el nombre de la rama inicial para usar en todos
+ayuda: de sus nuevos repositorios, reprimiendo esta advertencia, llama a:
+ayuda: 
+ayuda: 	git config --global init.defaultBranch <nombre>
+ayuda: 
+ayuda: Los nombres comúnmente elegidos en lugar de 'master' son 'main', 'trunk' y
+ayuda: 'development'. Se puede cambiar el nombre de la rama recién creada mediante este comando:
+ayuda: 
+ayuda: 	git branch -m <nombre>
+Inicializado repositorio Git vacío en /home/viwamoto/Ejercicio_Curso_GIT/.git/
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git checkout -b master
+Cambiado a nueva rama 'master'
+
+3) Crear un nuevo directorio y un archivo desde la terminal
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ mkdir nuevaCarpeta
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ cd nuevaCarpeta/
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT/nuevaCarpeta$ touch teste_1.txt
+
+4) Editar el arquivo desde el IDE agregando varias lineas de texto
+
+5) Comprobar el status del git
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT/nuevaCarpeta$ cd ..
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git status
+En la rama master
+
+No hay commits todavía
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	.history/
+	nuevaCarpeta/
+
+no hay nada agregado al commit pero hay archivos sin seguimiento presentes (usa "git add" para hacerles seguimiento)
+
+6) Agregar el archivo creado al staging
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git add nuevaCarpeta/
+
+7) Modificar el archivo
+
+8) Volver a comprobar el status de git
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git status
+En la rama master
+
+No hay commits todavía
+
+Cambios a ser confirmados:
+  (usa "git rm --cached <archivo>..." para sacar del área de stage)
+	nuevos archivos: nuevaCarpeta/teste_1.txt
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	.history/
+
+9)Hacer el primer commit
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git commit -m "primero fichero"
+[master (commit-raíz) b61f343] primero fichero
+ 1 file changed, 7 insertions(+)
+ create mode 100644 nuevaCarpeta/teste_1.txt
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git status
+En la rama master
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+	modificados:     nuevaCarpeta/teste_1.txt
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	.history/
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")
+
+10)Ver cambios los cambios
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git log
+commit b61f3438b52238e06fe13b100a67dafe7e923a4d
+Author: Vanessa Iwamoto <viwamoto@hiberus.com>
+Date:   Mon Nov 20 17:47:06 2023 +0100
+
+    primero fichero
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git diff 1fcec524774fc5f05d707157948f2cd9e623d072
+diff --git a/nuevaCarpeta/teste_1.txt b/nuevaCarpeta/teste_1.txt
+index 4dafbc0..1215f13 100644
+--- a/nuevaCarpeta/teste_1.txt
++++ b/nuevaCarpeta/teste_1.txt
+@@ -1,7 +1,8 @@
+-1 - Nuevo fichero
++1 - Nuevo fichero teste
+ 2 - Nuevo fichero
+ 3 - Nuevo fichero
+ 4 - Nuevo fichero
+ 5 - Nuevo fichero
+ 6 - Nuevo fichero
+-7 - Nuevo fichero
+\ No newline at end of file
++7 - Nuevo fichero
++9 - Nueva linea teste
+\ No newline at end of file
+
+11) Volver a modificar el archivo
+
+12) Realizar otro commit con estos cambios
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git status
+En la rama master
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+	modificados:     nuevaCarpeta/teste_1.txt
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	.history/
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git add nuevaCarpeta/teste_1.txt
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git commit -m "segundo fichero"
+[master 1fcec52] segundo fichero
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git status
+En la rama master
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	.history/
+
+no hay nada agregado al commit pero hay archivos sin seguimiento presentes (usa "git add" para hacerles seguimiento)
+
+13) Comparar las versiones entre el primerio y el ultimo commit
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git log
+commit 1fcec524774fc5f05d707157948f2cd9e623d072 (HEAD -> master)
+Author: Vanessa Iwamoto <viwamoto@hiberus.com>
+Date:   Mon Nov 20 17:48:24 2023 +0100
+
+    segundo fichero
+
+commit b61f3438b52238e06fe13b100a67dafe7e923a4d
+Author: Vanessa Iwamoto <viwamoto@hiberus.com>
+Date:   Mon Nov 20 17:47:06 2023 +0100
+
+    primero fichero
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git diff 1fcec524774fc5f05d707157948f2cd9e623d072 b61f3438b52238e06fe13b100a67dafe7e923a4d
+diff --git a/nuevaCarpeta/teste_1.txt b/nuevaCarpeta/teste_1.txt
+index 1215f13..4dafbc0 100644
+--- a/nuevaCarpeta/teste_1.txt
++++ b/nuevaCarpeta/teste_1.txt
+@@ -1,8 +1,7 @@
+-1 - Nuevo fichero teste
++1 - Nuevo fichero
+ 2 - Nuevo fichero
+ 3 - Nuevo fichero
+ 4 - Nuevo fichero
+ 5 - Nuevo fichero
+ 6 - Nuevo fichero
+-7 - Nuevo fichero
+-9 - Nueva linea teste
+\ No newline at end of file
++7 - Nuevo fichero
+\ No newline at end of file
+
+14) Modificar el archivo po ultima vez borrando todo du contenido
+
+15) Hacer commit
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git status
+En la rama master
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+	modificados:     nuevaCarpeta/teste_1.txt
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	.history/
+	diffs.txt
+	solucion_Ejercicio1.txtx
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git add nuevaCarpeta/teste_1.txt
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git commit -m "tercer commit"
+[master 98d6cd0] tercer commit
+ 1 file changed, 8 deletions(-)
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git status
+En la rama master
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	.history/
+	diffs.txt
+	solucion_Ejercicio1.txtx
+
+no hay nada agregado al commit pero hay archivos sin seguimiento presentes (usa "git add" para hacerles seguimiento)
+
+16) Mostrar los cambios registrados en el archivo
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git diff 1fcec524774fc5f05d707157948f2cd9e623d072
+diff --git a/nuevaCarpeta/teste_1.txt b/nuevaCarpeta/teste_1.txt
+index 1215f13..e69de29 100644
+--- a/nuevaCarpeta/teste_1.txt
++++ b/nuevaCarpeta/teste_1.txt
+@@ -1,8 +0,0 @@
+-1 - Nuevo fichero teste
+-2 - Nuevo fichero
+-3 - Nuevo fichero
+-4 - Nuevo fichero
+-5 - Nuevo fichero
+-6 - Nuevo fichero
+-7 - Nuevo fichero
+-9 - Nueva linea teste
+\ No newline at end of file
+
+17) Crear una historia
+
+18) Volber a una version anterior
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git log
+commit 98d6cd0900d607a2a4e8cefd15e798afc60d50a7 (HEAD -> master)
+Author: Vanessa Iwamoto <viwamoto@hiberus.com>
+Date:   Mon Nov 20 18:06:13 2023 +0100
+
+    tercer commit
+
+commit 1fcec524774fc5f05d707157948f2cd9e623d072
+Author: Vanessa Iwamoto <viwamoto@hiberus.com>
+Date:   Mon Nov 20 17:48:24 2023 +0100
+
+    segundo fichero
+
+commit b61f3438b52238e06fe13b100a67dafe7e923a4d
+Author: Vanessa Iwamoto <viwamoto@hiberus.com>
+Date:   Mon Nov 20 17:47:06 2023 +0100
+
+    primero fichero
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git reset 1fcec524774fc5f05d707157948f2cd9e623d072
+Cambios fuera del área de stage tras el reset:
+M	nuevaCarpeta/teste_1.txt
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ git status
+En la rama master
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+	modificados:     nuevaCarpeta/teste_1.txt
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	.history/
+	diffs.txt
+	solucion_Ejercicio1.txtx
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")
+viwamoto@HL-119633:~/Ejercicio_Curso_GIT$ 
+
