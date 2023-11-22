@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Nuevo fichero
 para rama cambios1
 para rama cambios2
 cambio1
+=======
+Nuevo fichero
+>>>>>>> bb9d388 (1 commit develop)
